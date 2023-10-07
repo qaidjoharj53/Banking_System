@@ -1,5 +1,11 @@
 # Banking_System
+This program is built using Python and MySQL. It can store the names of the customer and their banking details. 
 
+ # Requirement/s
+  MySQL -SQL data engine software. The installations link is given below, setup the software - install first the server and then all others (for more refer youtube)
+  <a href="url">https://dev.mysql.com/downloads/installer/</a>
+  After the setup checkout the 'requirements.py' file and run the code in your python compiler ;)
+  
 ## Overview
 
 The Banking_System project is a software application that provides essential tools and features for bank employees to manage various banking operations efficiently. It is designed to streamline the daily tasks and responsibilities of bank employees, making their work more organized and user-friendly.
