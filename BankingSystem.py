@@ -1,5 +1,5 @@
 import mysql.connector as c
-con = c.connect(host = "", user = "", password = "")
+con = c.connect(host = "localhost", user = "root", password = "password@123")
 cur = con.cursor()
 
 cur.execute("use BankingSystem")
@@ -7,9 +7,6 @@ cur.execute("use BankingSystem")
 
 print("=====================================")
 
-customerNames = ['Jane Smith', 'Iason Jordan', 'David Morgan', 'Brain John', 'Jack Swift']
-customerPins = ['0123', '2575', '7275', '2312', '5049']
-customerBalances = [10000, 20000, 20000, 40000, 10000]
 deposition = 0
 withdrawal = 0
 balance = 0
@@ -44,9 +41,7 @@ while True:
         while counter_1 <= i:
             # These few lines will take information from customer and then append them to the list.
             name = input("Input Fullname : ")
-            customerNames.append(name)
             pin = str(input("Please input a pin of your choice : "))
-            customerPins.append(pin)
             balance = 0
             deposition = eval(input("Please input a value to deposit to start an account : "))
             balance = balance + deposition
@@ -54,23 +49,16 @@ while True:
             cur.execute(f"insert CustomerDetails(customer_name,account_pin,balance_amount) values('{name}','{pin}',{deposition});")
             con.commit()
 
-            customerBalances.append(balance)
-            print("\nName=", end=" ")
-            print(customerNames[counter_2])
-            print("Pin=", end=" ")
-            print(customerPins[counter_2])
-            print("Balance=", end=" ")
-            print(customerBalances[counter_2], end=" ")
-            print("-/Rs")
-            counter_1 = counter_1 + 1
-            counter_2 = counter_2 + 1
             print("\nYour name is added to customers system")
             print("Your pin is added to customer system")
             print("Your balance is added to customer system")
             print("----New account created successfully !----")
             print("\n")
             print("Your name is avalilable on the customers list now : ")
-            print(customerNames)
+            cur.execute("select customer_name,balance_amount from CustomerDetails;")
+            data = cur.fetchall()
+            for i in data:
+                print("->Customer =", i[0], "\n", "->Balance =", i[1], "-/Rs")
             print("\n")
             print("Note! Please remember the Name and Pin")
             print("========================================")
@@ -80,7 +68,6 @@ while True:
         j = 0
         print("Choice number 2 is selected by the customer")
         try:
-
             cur.execute(f"select balance_amount from CustomerDetails where customer_name = '{name}' and account_pin='{pin}';")
             amount = cur.fetchone()
             balance = 0
@@ -115,7 +102,6 @@ while True:
         name = input("Please input name : ")
         pin = input("Please input pin : ")
         try:
-
             cur.execute(f"select balance_amount from CustomerDetails where customer_name = '{name}' and account_pin='{pin}';")
             amount = cur.fetchone()
             balance=0
