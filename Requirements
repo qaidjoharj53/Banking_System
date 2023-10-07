@@ -1,0 +1,8 @@
+import mysql.connector as c
+
+con = c.connect(host = "localhost", user = "root", password = "password@123")
+cur = con.cursor()
+cur.execute("create database BankingSystem")       #database creation
+cur.execute("use BankingSystem")
+cur.execute("create table CustomerDetails (sr_no int primary key not null auto_increment,customer_name varchar(50) not null,account_pin varchar(4) not null,balance_amount int not null);")
+print("Database and table created successfully")
