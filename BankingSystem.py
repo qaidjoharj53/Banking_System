@@ -1,7 +1,14 @@
 print("=====================================")
 
-customerNames = ['Jane Smith', 'Iason Jordan', 'David Morgan', 'Brian John', 'Jack Swift']
-customerPins = ['0123', '2575', '7275', '2312', '5049']
+customerNames = [
+    "Jane Smith",
+    "Iason Jordan",
+    "David Morgan",
+    "Brain John",
+    "Jack Swift",
+]
+customerPins = ["0123", "2575", "7275", "2312", "5049"]
+
 customerBalances = [10000, 20000, 20000, 40000, 10000]
 deposition = 0
 withdrawal = 0
@@ -175,6 +182,7 @@ while True:
             # These statements would be just shown to the customer.
             print("Choice number 5 is selected by the customer")
             print("Thank you for using our banking system!")
+
             print("\n")
             print("Come again")
             print("Bye bye")
@@ -188,3 +196,4 @@ while True:
 
     except Exception as e:
         print("An error occurred:", str(e))
+
