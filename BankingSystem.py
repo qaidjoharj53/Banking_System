@@ -1,8 +1,13 @@
-
 print("=====================================")
 
-customerNames = ['Jane Smith', 'Iason Jordan', 'David Morgan', 'Brain John', 'Jack Swift']
-customerPins = ['0123', '2575', '7275', '2312', '5049']
+customerNames = [
+    "Jane Smith",
+    "Iason Jordan",
+    "David Morgan",
+    "Brain John",
+    "Jack Swift",
+]
+customerPins = ["0123", "2575", "7275", "2312", "5049"]
 customerBalances = [10000, 20000, 20000, 40000, 10000]
 deposition = 0
 withdrawal = 0
@@ -29,12 +34,14 @@ while True:
         print("Choice number 1 is selected by the customer")
         # The line below will take the no:of customers from the user.
         NOC = eval(input("Number of Customers : "))
- 
+
         i = i + NOC
         # The if condition will restrict the number of new account to 5.
         if i > 5:
             print("\n")
-            print("Customer registration exceed reached or Customer registration too low")
+            print(
+                "Customer registration exceed reached or Customer registration too low"
+            )
             i = i - NOC
         else:
             # The while loop will run according to the no:of customers.
@@ -45,7 +52,9 @@ while True:
                 pin = str(input("Please input a pin of your choice : "))
                 customerPins.append(pin)
                 balance = 0
-                deposition = eval(input("Please input a value to deposit to start an account : "))
+                deposition = eval(
+                    input("Please input a value to deposit to start an account : ")
+                )
                 balance = balance + deposition
                 customerBalances.append(balance)
                 print("\nName=", end=" ")
@@ -68,7 +77,9 @@ while True:
                 print("Note! Please remember the Name and Pin")
                 print("========================================")
                 # This statement below helps the user to go back to the start of the program (main menu).
-        mainMenu = input("Please press enter key to go back to main menu to perform another function or exit ...")
+        mainMenu = input(
+            "Please press enter key to go back to main menu to perform another function or exit ..."
+        )
     elif choiceNumber == "2":
         j = 0
         print("Choice number 2 is selected by the customer")
@@ -89,14 +100,17 @@ while True:
                         print("Your Current Balance:", end=" ")
                         print(customerBalances[k], end=" ")
                         print("-/Rs\n")
-                        balance = (customerBalances[k])
+                        balance = customerBalances[k]
                         # Statement below would take the amount to withdraw from user.
                         withdrawal = eval(input("Input value to Withdraw : "))
                         # The if condition below would look whether the withdraw is greater than the balance.
                         if withdrawal > balance:
                             # This statement below would take a deposition from the customer.
-                            deposition = eval(input(
-                                "Please Deposit a higher Value because your Balance mentioned above is not enough : "))
+                            deposition = eval(
+                                input(
+                                    "Please Deposit a higher Value because your Balance mentioned above is not enough : "
+                                )
+                            )
                             # These few statements would update the value and show the balance to user.
                             balance = balance + deposition
                             print("Your Current Balance:", end=" ")
@@ -123,7 +137,9 @@ while True:
                 print("Your name and pin does not match!\n")
                 break
             # This statement below helps the user to go back to the start of the program (main menu).
-        mainMenu = input("Please press enter key to go back to main menu to perform another function or exit ...")
+        mainMenu = input(
+            "Please press enter key to go back to main menu to perform another function or exit ..."
+        )
     elif choiceNumber == "3":
         print("Choice number 3 is selected by the customer")
         n = 0
@@ -144,9 +160,11 @@ while True:
                         print("Your Current Balance: ", end=" ")
                         print(customerBalances[k], end=" ")
                         print("-/Rs")
-                        balance = (customerBalances[k])
+                        balance = customerBalances[k]
                         # This statement below takes the depositionn from the customer.
-                        deposition = eval(input("Enter the value you want to deposit : "))
+                        deposition = eval(
+                            input("Enter the value you want to deposit : ")
+                        )
                         balance = balance + deposition
                         customerBalances[k] = balance
                         print("\n")
@@ -157,7 +175,9 @@ while True:
                 print("Your name and pin does not match!\n")
                 break
             # This statement below helps the user to go back to the start of the program (main menu).
-        mainMenu = input("Please press enter key to go back to main menu to perform another function or exit ...")
+        mainMenu = input(
+            "Please press enter key to go back to main menu to perform another function or exit ..."
+        )
     elif choiceNumber == "4":
         print("Choice number 4 is selected by the customer")
         k = 0
@@ -171,7 +191,9 @@ while True:
             print("\n")
             k = k + 1
             # This statement below helps the user to go back to the start of the program (main menu).
-        mainMenu = input("Please press enter key to go back to main menu to perform another fuction or exit ...")
+        mainMenu = input(
+            "Please press enter key to go back to main menu to perform another fuction or exit ..."
+        )
     elif choiceNumber == "5":
         # These statements would be just showed to the customer.
         print("Choice number 5 is selected by the customer")
@@ -185,4 +207,6 @@ while True:
         print("Invalid option selected by the customer")
         print("Please Try again!")
         # This statement below helps the user to go back to the start of the program (main menu).
-        mainMenu = input("Please press enter key to go back to main menu to perform another function or exit ...")
+        mainMenu = input(
+            "Please press enter key to go back to main menu to perform another function or exit ..."
+        )
