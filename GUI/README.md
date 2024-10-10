@@ -46,3 +46,7 @@ python Bank_gui.py
 
 - UI Creation: Developed banking.ui for account setup and transaction.ui for managing transactions.
 - Functionality: Implemented features for account creation, transaction handling, and user verification.
+
+## Contribution
+
+As a contributor, I welcome suggestions and improvements. Please do mention them either creating an issue or tagging me. (^^)
