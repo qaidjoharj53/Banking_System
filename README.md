@@ -35,4 +35,4 @@ Before you can run the Banking_System, make sure you have the following prerequi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/Banking_System.git
+   git clone https://github.com/qaidjoharj53/Banking_System.git
